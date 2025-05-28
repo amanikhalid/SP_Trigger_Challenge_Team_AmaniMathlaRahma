@@ -76,3 +76,21 @@ END;
 ```sql
 EXEC procedure_name;
  ```
+
+ --------------
+### Stored Procedure Example
+ ```sql
+CREATE PROCEDURE SelectAllCustomers
+AS
+BEGIN
+SELECT * FROM Customers
+END;
+```
+
+#### Execute a Stored Procedure Example
+```sql
+EXEC SelectAllCustomers;
+
+ ```
+ -----------
+
