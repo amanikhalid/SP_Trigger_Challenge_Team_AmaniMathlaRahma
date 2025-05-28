@@ -376,6 +376,7 @@ END;
 
 4. Sometimes if the code is not well managed, then it can help in maintaining the database constraints defined on the tables on which the trigger is defined. For example, suppose if have a situation that there is an online learning system in which a user can register in the multiple course.
 
+
 ### Drawbacks of Trigger
 1. CREATE TRIGGER must be the first statement in the batch and can apply to only one table.
 
@@ -388,3 +389,24 @@ END;
 5. INSTEAD OF DELETE/UPDATE triggers can't be defined on a table that has a foreign key with a cascade on DELETE/UPDATE action defined.
 
 6. Any SET statement can be specified inside a trigger. The SET option selected remains in effect during the execution of the trigger and then reverts to its former setting.
+
+-----------
+
+## Real-World Use Cases of SQL Triggers
+
+**1. Automatically Updating Related Tables (DML Trigger Example)**
+
+**Case:** Triggers can automatically perform tasks, like updating related tables when data changes. Imagine we have a database for students, where the student_grades table holds individual subject grades. If the grade of a student is updated, we may also need to update the total_scores table **Code:**
+
+```sql
+CREATE TRIGGER update_student_score
+AFTER UPDATE ON student_grades
+FOR EACH ROW
+BEGIN
+   UPDATE total_scores
+   SET score = score + :new.grade
+   WHERE student_id = :new.student_id;
+END;
+```
+
+This ensures that every time a student's grade is updated, the total score in the total_scores table is automatically recalculated.
