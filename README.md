@@ -305,3 +305,18 @@ The EVENTDATA() is an inbuilt function of the DDL trigger in SQL Server and that
 - SetOptions (SET Option which are applied while Creating View or Modify it)
 - CommandText (Create, Alter or Drop object command)
 - EVENTDATA() returns multiple fields in XML format as shown above and using those fields, we are able to create such metrics to track various events of DDL over the objects. In general, each DDL event of the object schema changes can be appended into the table, these event types are mentioned in the header body of ä trigger with the FOR CREATE_, ALTER_, DROP_,…
+
+#### Example : Prevent Table Deletions
+```sql
+CREATE TRIGGER prevent_table_creation
+ON DATABASE
+FOR CREATE_TABLE, ALTER_TABLE, DROP_TABLE
+AS 
+BEGIN
+   PRINT 'you can not create, drop and alter table in this database';
+   ROLLBACK;
+END;
+```
+
+## 2. DML Triggers (Data Manipulation Language):
+DML triggers fire when we manipulate data with commands like INSERT, UPDATE, or DELETE. These triggers are perfect for scenarios where we need to validate data before it is inserted, log changes to a table, or cascade updates across related tables.
