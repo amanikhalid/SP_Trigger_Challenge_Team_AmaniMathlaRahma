@@ -200,3 +200,20 @@ INSERT INTO Employees (Name, Salary, DepartmentID) VALUES
 ```
 #### Tables info
 ![Tables Info](./image/dept_Emp_tables.png)
+-----
+#### # Create a Stored Procedure with One Parameter
+```sql
+CREATE PROCEDURE GetEmployeesByDepartment
+    @DepartmentID INT
+AS
+BEGIN
+    SELECT e.EmployeeID, e.Name, e.Salary, d.DepartmentName
+    FROM Employees e
+    INNER JOIN Departments d ON e.DepartmentID = d.DepartmentID
+    WHERE e.DepartmentID = @DepartmentID;
+END;
+```
+#### How to Execute It 
+```sql
+EXEC GetEmployeesByDepartment @DepartmentID = 101;
+```
