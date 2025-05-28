@@ -278,3 +278,8 @@ SELECT @Result AS TotalSalary;
 
 ## What is Trigger? 
 A trigger is a stored procedure in a database that automatically invokes whenever a special event in the database occurs. By using SQL triggers, developers can automate tasks, ensure data consistency, and keep accurate records of database activities. For example, a trigger can be invoked when a row is inserted into a specified table or when specific table columns are updated.
+
+# Types of SQL triggers
+## 1. DDL Triggers (Data Definition Language):
+What is DDL Trigger?
+The Data Definition Language (DDL) command events such as Create_table, Create_view, drop_table, Drop_view, and Alter_table cause the DDL triggers to be activated. They allow us to track changes in the structure of the database. The trigger will prevent any table creation, alteration, or deletion in the database.
