@@ -94,3 +94,28 @@ EXEC SelectAllCustomers;
  ```
  -----------
 
+ ### Stored Procedure With One Parameter
+ ```sql
+CREATE PROCEDURE procedure_name @Parameter_name datatype
+AS
+BEGIN
+--sql_statement with  @Parameter_name
+END;
+ ```
+
+#### Example of a Stored Procedure with Parameter
+
+ ```sql
+CREATE PROCEDURE SelectAllCustomers @City nvarchar(30)
+AS
+BEGIN
+SELECT * FROM Customers WHERE City = @City
+END;
+```
+#### Execute a Stored Procedure with Parameter
+```sql
+EXEC SelectAllCustomers @City = 'London';
+ ```
+ 
+ -------------
+
