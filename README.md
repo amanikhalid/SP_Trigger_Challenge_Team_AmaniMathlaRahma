@@ -289,3 +289,19 @@ Every DDL operation generates one Transaction in case of the DDL Trigger have be
 
 ![HowDDLTriggerWorksOverDatabase Output](./image/how-ddl-trigger-works-over-database.png)
 
+The EVENTDATA() is an inbuilt function of the DDL trigger in SQL Server and that would return exchange occasion subtleties with the number of the fields in XML format
+
+- EventType (Create View, Alter View, Drop View, etc…)
+- PostTime (Event trigger time)
+- SPID (SQL Server session ID)
+- ServerName (SQL Server instance name)
+- LoginName (SQL Server Login name)
+- UserName (username for login, by default dbo schema as username)
+- DatabaseName (name of database where trigger was executed)
+- SchemaName (schema name of the View)
+- ObjectName (Name of the View)
+- ObjectType (Object types. such as Table, view, procedure, etc…)
+- TSQLCommand (Schema deployment Query which is executed by user)
+- SetOptions (SET Option which are applied while Creating View or Modify it)
+- CommandText (Create, Alter or Drop object command)
+- EVENTDATA() returns multiple fields in XML format as shown above and using those fields, we are able to create such metrics to track various events of DDL over the objects. In general, each DDL event of the object schema changes can be appended into the table, these event types are mentioned in the header body of ä trigger with the FOR CREATE_, ALTER_, DROP_,…
