@@ -287,4 +287,5 @@ The Data Definition Language (DDL) command events such as Create_table, Create_v
 ## How DDL Trigger Works?
 Every DDL operation generates one Transaction in case of the DDL Trigger have been applied at the Database or the Server level. The SQL Server generates the events with relevant information in the same transaction following the operation. Prepare a metric with extracting the DDL event function(EVENTDATA()) to wraps a policy or standards for deployment:
 
+![HowDDLTriggerWorksOverDatabase Output](./image/how-ddl-trigger-works-over-database.png)
 
