@@ -26,3 +26,18 @@ INSERT INTO Employees (Name, Salary, DepartmentID) VALUES
 ('Carol', 7000.00, 102),
 ('David', 5500.00, 103),
 ('Eva', 7200.00, 101);
+
+--  Procedure without Parameters
+
+CREATE PROCEDURE GetAllEmployees
+AS
+BEGIN
+    SELECT e.EmployeeID, e.Name, e.Salary, d.DepartmentName
+    FROM Employees e
+    INNER JOIN Departments d ON e.DepartmentID = d.DepartmentID;
+END;
+
+-- How to Execute It 
+EXEC GetAllEmployees;
+
+
