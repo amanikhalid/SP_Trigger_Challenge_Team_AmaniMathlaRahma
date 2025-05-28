@@ -283,3 +283,8 @@ A trigger is a stored procedure in a database that automatically invokes wheneve
 ## 1. DDL Triggers (Data Definition Language):
 What is DDL Trigger?
 The Data Definition Language (DDL) command events such as Create_table, Create_view, drop_table, Drop_view, and Alter_table cause the DDL triggers to be activated. They allow us to track changes in the structure of the database. The trigger will prevent any table creation, alteration, or deletion in the database.
+
+## How DDL Trigger Works?
+Every DDL operation generates one Transaction in case of the DDL Trigger have been applied at the Database or the Server level. The SQL Server generates the events with relevant information in the same transaction following the operation. Prepare a metric with extracting the DDL event function(EVENTDATA()) to wraps a policy or standards for deployment:
+
+
