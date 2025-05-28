@@ -1,4 +1,4 @@
-# SP_Trigger_Challenge_Team_AmaniMathlaRahma
+# Stored Procedures and Triggers
 
 ### What is Stored Procedures?
  - A stored procedure is a precompiled collection of one or more SQL statements stored in the database. It can be executed multiple times with different parameters, allowing for efficient reuse of logic, reduced duplication, and better performance.
@@ -61,3 +61,18 @@ These are SQL Server-based stored procedures that are written in.NET languages,
 such as C#. When complex functionality is required that is difficult to implement with 
 T-SQL alone, such as interacting with external APIs or complex string manipulation, 
 CLR stored procedures can be helpful. 
+
+### Stored Procrdures ( Syntax with Example )
+
+### Stored Procedure Syntax
+ ```sql
+CREATE PROCEDURE procedure_name
+AS
+BEGIN
+   --sql_statement
+END;
+```
+#### Execute a Stored Procedure
+```sql
+EXEC procedure_name;
+ ```
