@@ -249,3 +249,6 @@ EXEC CalculateTotalSalaryByDepartment
 -- Display the result
 SELECT @Result AS TotalSalary;
 ```
+
+#### Output of the Stored Procedure
+![CalculateTotalSalaryByDepartment Output](./image/ProcedureWithTwoParameters.png)
