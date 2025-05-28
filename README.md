@@ -198,3 +198,5 @@ INSERT INTO Employees (Name, Salary, DepartmentID) VALUES
 
 
 ```
+#### Tables info
+![Tables Info](./image/dept_Emp_tables.png)
