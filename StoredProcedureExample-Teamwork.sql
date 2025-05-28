@@ -57,3 +57,29 @@ END;
 
 EXEC GetEmployeesByDepartment @DepartmentID = 101;
 
+--Procedure with Two Parameter
+-- Create stored procedure to calculate total salary by department ( Multi Parameters )
+CREATE PROCEDURE CalculateTotalSalaryByDepartment
+    @DepartmentID INT,               -- Input parameter
+    @TotalSalary DECIMAL(10, 2) OUTPUT  -- Output parameter
+AS
+BEGIN
+    SELECT @TotalSalary = SUM(Salary)
+    FROM Employees
+    WHERE DepartmentID = @DepartmentID;
+END;
+
+
+
+-- How to Execute It 
+
+-- Declare a variable to hold the output
+DECLARE @Result DECIMAL(10, 2);
+
+-- Call the procedure
+EXEC CalculateTotalSalaryByDepartment
+    @DepartmentID = 101,
+    @TotalSalary = @Result OUTPUT;
+
+-- Display the result
+SELECT @Result AS TotalSalary;
