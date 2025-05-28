@@ -410,3 +410,22 @@ END;
 ```
 
 This ensures that every time a student's grade is updated, the total score in the total_scores table is automatically recalculated.
+
+**2. Data Validation (Before Insert Trigger Example)**
+
+**Case:** Triggers can be used to validate data before it is inserted into a table, ensuring that the data follows specific business rules. For instance, we may want to ensure that the grades being inserted are within a valid range (say 0 to 100).
+**Code:**
+
+```sql
+CREATE TRIGGER validate_grade
+BEFORE INSERT ON student_grades
+FOR EACH ROW
+BEGIN
+   IF :new.grade < 0 OR :new.grade > 100 THEN
+      RAISE_APPLICATION_ERROR(-20001, 'Invalid grade value.');
+   END IF;
+END;
+
+```
+
+The trigger checks if the inserted grade is valid. If not, it throws an error and prevents the insertion.
