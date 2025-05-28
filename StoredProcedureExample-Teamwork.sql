@@ -18,3 +18,11 @@ CREATE TABLE Employees (
     DepartmentID INT NOT NULL,
     FOREIGN KEY (DepartmentID) REFERENCES Departments(DepartmentID)
 );
+
+-- Insert sample data into Employees
+INSERT INTO Employees (Name, Salary, DepartmentID) VALUES
+('Alice', 5000.00, 101),
+('Bob', 6000.00, 101),
+('Carol', 7000.00, 102),
+('David', 5500.00, 103),
+('Eva', 7200.00, 101);
