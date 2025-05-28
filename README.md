@@ -217,6 +217,9 @@ EXEC GetAllEmployees;
 ```
 #### Output of the Stored Procedure
 
+![GetAllEmployees Output](./image/ProcedureWithoutParameters.png)
+
+---------
 #### # Create a Stored Procedure with One Parameter
 ```sql
 CREATE PROCEDURE GetEmployeesByDepartment
