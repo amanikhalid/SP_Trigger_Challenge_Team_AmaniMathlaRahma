@@ -118,4 +118,27 @@ EXEC SelectAllCustomers @City = 'London';
  ```
  
  -------------
+ ### Stored Procedure With Multiple Parameters
+ ```sql
 
+CREATE PROCEDURE procedure_name @Parameter_name1 datatype , @Parameter_name2 datatype
+AS
+BEGIN
+--sql_statement with  @Parameter_name1 ,@Parameter_name2
+END;
+ ```
+#### Example of a Stored Procedure with Multiple Parameters
+ ```sql
+CREATE PROCEDURE SelectAllCustomers @City nvarchar(30), @PostalCode nvarchar(10)
+AS
+BEGIN
+SELECT * FROM Customers WHERE City = @City AND PostalCode = @PostalCode
+END;
+ ```
+ #### Execute a Stored Procedure With Multiple Parameters
+  
+ ```sql
+EXEC SelectAllCustomers @City = 'London', @PostalCode = 'WA1 1DP';
+ ```
+
+ -------------
