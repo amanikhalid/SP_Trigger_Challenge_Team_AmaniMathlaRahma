@@ -24,3 +24,19 @@ Using EXECUTE AS can impersonate specific users and protect sensitive data.
  - **Modularity & Abstraction**
 	- Procedures let you abstract complex SQL logic away from client applications.
 	- Parameters can be used for dynamic input.
+	
+	### Drawbacks of Stored Procedures 
+
+
+ - **Debugging Difficulty:** 
+	 Debugging can be more complex compared to regular SQL.
+ - **Versioning:** 
+	Harder to manage versions compared to application code.
+ - **Portability:** 
+    Procedures are often tied to a specific DBMS (e.g., SQL Server vs Oracle).
+ - **Testing Complexity:** 
+	Errors may only surface at runtime.
+ - **Resource Overhead:** 
+	Complex or overused procedures can consume server resources.
+ - **Developer Costs:** 
+	Writing efficient procedures may require skilled DBAs or SQL developers.
