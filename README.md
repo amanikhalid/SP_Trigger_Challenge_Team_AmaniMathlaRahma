@@ -217,3 +217,5 @@ END;
 ```sql
 EXEC GetEmployeesByDepartment @DepartmentID = 101;
 ```
+#### Output of the Stored Procedure
+![GetEmployeesByDepartment Output](./image/ProcedureWithOneParameters.png)
