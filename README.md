@@ -320,3 +320,15 @@ END;
 
 ## 2. DML Triggers (Data Manipulation Language):
 DML triggers fire when we manipulate data with commands like INSERT, UPDATE, or DELETE. These triggers are perfect for scenarios where we need to validate data before it is inserted, log changes to a table, or cascade updates across related tables.
+
+#### Example : Prevent Table Deletions
+```sql
+CREATE TRIGGER prevent_update 
+ON students
+FOR UPDATE 
+AS 
+BEGIN 
+   PRINT 'You can not insert, update and delete this table i'; 
+   ROLLBACK; 
+END;
+```
