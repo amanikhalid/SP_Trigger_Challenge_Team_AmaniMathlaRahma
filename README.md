@@ -350,4 +350,5 @@ We use two terms for a database successful connection in any database.
 - Authentication: We specify a username and password to connect using SQL authentication. It is a validation of the user’s credentials
 - Authorization: It is a permission that allows you to do specific tasks. You may be authorized to have full access to a specific database but not authorized to make any changes at the instance level Logon Trigger integration
 
+![logon-trigger-integration Output](./image/logon-trigger-integration.png)
 
