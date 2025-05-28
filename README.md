@@ -447,3 +447,7 @@ The trigger checks if the inserted grade is valid. If not, it throws an error an
 
 1. For recording Audit trail where you want new and old values to be inserted in to audit table.
 2. Updating values after the update has happened.
+
+![SQLInsetedAfterTrigger Output](./image/sql_Inseted_after_trigger.png)
+
+**BEFORE Trigger** These run before the action (INSERT, UPDATE, DELETE) is executed. They’re great for data validation or modifying values before they are committed to the database.
