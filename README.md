@@ -352,3 +352,4 @@ We use two terms for a database successful connection in any database.
 
 ![logon-trigger-integration Output](./image/logon-trigger-integration.png)
 
+If any user is unable to authenticate to SQL Server (wrong credentials), SQL Server does not execute the logon triggers. SQL Server starts an implicit transaction before the logon triggers fires. It is independent of any user transaction. In the case of the logon trigger, the transaction count is 1. In case SQL returns an exception, its value sets to zero. It fails the implicit transaction, and the user session is not established. User connection also fails in case of the error having severity more significant than 20 inside the trigger.
