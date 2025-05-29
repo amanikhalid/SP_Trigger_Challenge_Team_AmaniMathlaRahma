@@ -648,6 +648,17 @@ WHERE name = 'trg_logon';
 ```
 ![LogonToCheck Output](./image/logon_toCheck.png)
 
+```sql
+-- making the trigger enable
+ENABLE TRIGGER trg_logon ON ALL SERVER;
+
+-- to display trg_logon
+USE master;
+GO
+SELECT * FROM login_log ORDER BY LoginTime DESC;
+
+```
+
 
 
 
