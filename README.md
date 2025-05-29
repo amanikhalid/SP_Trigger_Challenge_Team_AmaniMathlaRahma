@@ -467,4 +467,16 @@ END;
 
 ```
 
+## Apply Trigger in Practice
+```sql
+-- Create database
+Create database TriggerDB
+-- USE Database
+USE TriggerDB
+
+```
+
+
+
+
 
