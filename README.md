@@ -476,7 +476,18 @@ USE TriggerDB
 
 ```
 
+#### DDL Trigger: CREATE, ALTER, DROP TABLE
 
+**Step 1: Create a log table**
+```sql
+CREATE TABLE ddl_log (
+  EventType      NVARCHAR(100),
+  ObjectName     NVARCHAR(256),
+  ObjectType     NVARCHAR(100),
+  EventTime      DATETIME DEFAULT GETDATE(),
+  LoginName      NVARCHAR(100)
+);
 
+```
 
 
