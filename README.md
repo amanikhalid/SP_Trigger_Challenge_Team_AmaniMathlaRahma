@@ -508,6 +508,20 @@ BEGIN
 END;
 ```
 
+**Step 3: Create a table to track employee activity**
+```sql
+CREATE TABLE employees (
+    emp_id INT PRIMARY KEY,
+    name NVARCHAR(100),
+    position NVARCHAR(50),
+    salary DECIMAL(10, 2)
+);
+INSERT INTO employees VALUES (1, 'Alice', 'Manager', 7000.00);
+```
+
+
+
+
 
 
 
