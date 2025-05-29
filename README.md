@@ -639,6 +639,13 @@ BEGIN
     );
 END;
 ```
+**Step 3: Check Execution of LOGON Trigger**
+```sql
+- to check if the trigger enable or not
+SELECT name, is_disabled
+FROM sys.server_triggers
+WHERE name = 'trg_logon';
+```
 
 
 
