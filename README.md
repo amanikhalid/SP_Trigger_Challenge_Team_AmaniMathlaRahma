@@ -646,6 +646,8 @@ SELECT name, is_disabled
 FROM sys.server_triggers
 WHERE name = 'trg_logon';
 ```
+![LogonToCheck Output](./image/logon_toCheck.png)
+
 
 
 
