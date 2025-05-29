@@ -599,6 +599,10 @@ Update employees set name = 'Amani' where emp_id =1
 delete from employees where emp_id =3
 ```
 
+**Step 4: Check Execution of DML Trigger**
+```sql
+select * from dml_log;
+```
 
 
 
