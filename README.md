@@ -590,6 +590,16 @@ BEGIN
 END;
 ```
 
+**Step 3: Modifying the employee table to run the terigger MDL**
+```sql
+INSERT INTO employees VALUES (2, 'Ali', 'Manager', 9000.00);
+INSERT INTO employees VALUES (3, 'Mathla', 'Manager', 10000.00);
+Update employees set name = 'Rahma' where emp_id =2
+Update employees set name = 'Amani' where emp_id =1
+delete from employees where emp_id =3
+```
+
+
 
 
 
