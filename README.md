@@ -525,6 +525,19 @@ select * from ddl_log;
 ```
 ![CheckExecutionOfDDLTrigger Output](./image/CheckExecutionOfDDLTrigger.png)
 
+#### 2. DML Trigger: INSERT, UPDATE, DELETE Step 1: Create a table to track employee activity
+```sql
+CREATE TABLE employees (
+    emp_id INT PRIMARY KEY,
+    name NVARCHAR(100),
+    position NVARCHAR(50),
+    salary DECIMAL(10, 2)
+);
+
+INSERT INTO employees VALUES (1, 'Alice', 'Manager', 7000.00);
+```
+
+
 
 
 
