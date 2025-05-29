@@ -562,6 +562,21 @@ BEGIN
 END;
 ```
 
+**Update Trigger**
+```sql
+
+CREATE TRIGGER trg_employees_update
+ON employees
+AFTER UPDATE
+AS
+BEGIN
+    INSERT INTO dml_log (ActionType, EmpID, PerformedBy)
+    SELECT 'UPDATE', emp_id, SYSTEM_USER
+    FROM inserted;
+END;
+```
+
+
 
 
 
