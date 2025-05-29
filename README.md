@@ -604,6 +604,12 @@ delete from employees where emp_id =3
 select * from dml_log;
 ```
 
+**Output of DML Trigger**
+![DMLInsert Output](./image/dml_insert.png)
+![DMLUpdate Output](./image/dml_update.png)
+![DMLDelete Output](./image/dml_delete.png)
+
+
 
 
 
