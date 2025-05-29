@@ -546,6 +546,23 @@ CREATE TABLE dml_log (
     PerformedBy  NVARCHAR(100)
 );
 ```
+**Step 3: Create the triggers**
+**Insert Trigger**
+
+```sql
+
+CREATE TRIGGER trg_employees_insert
+ON employees
+AFTER INSERT
+AS
+BEGIN
+    INSERT INTO dml_log (ActionType, EmpID, PerformedBy)
+    SELECT 'INSERT', emp_id, SYSTEM_USER
+    FROM inserted;
+END;
+```
+
+
 
 
 
