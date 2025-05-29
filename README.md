@@ -623,6 +623,25 @@ CREATE TABLE login_log (
 ); 
 ```
 
+**Step 2: Create the logon trigger**
+
+```sql
+CREATE TRIGGER trg_logon
+ON ALL SERVER
+FOR LOGON
+AS
+BEGIN
+    INSERT INTO master.dbo.login_log (LoginName, HostName, AppName)
+    VALUES (
+        ORIGINAL_LOGIN(),
+        HOST_NAME(),
+        APP_NAME()
+    );
+END;
+```
+
+
+
 
 
 
