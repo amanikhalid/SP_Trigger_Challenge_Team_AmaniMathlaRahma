@@ -489,5 +489,27 @@ CREATE TABLE ddl_log (
 );
 
 ```
+**Step 2: Create the DDL trigger**
+```sql
+CREATE TRIGGER trg_ddl_table_events
+ON DATABASE
+FOR CREATE_TABLE, ALTER_TABLE, DROP_TABLE
+AS
+BEGIN
+    SET NOCOUNT ON;
+    DECLARE @EventData XML = EVENTDATA();
+    INSERT INTO ddl_log (EventType, ObjectName, ObjectType, LoginName)
+    VALUES (
+        @EventData.value('(/EVENT_INSTANCE/EventType)[1]', 'NVARCHAR(100)'),
+        @EventData.value('(/EVENT_INSTANCE/ObjectName)[1]', 'NVARCHAR(256)'),
+        @EventData.value('(/EVENT_INSTANCE/ObjectType)[1]', 'NVARCHAR(100)'),
+        @EventData.value('(/EVENT_INSTANCE/LoginName)[1]', 'NVARCHAR(100)')
+    );
+END;
+```
+
+
+
+
 
 
